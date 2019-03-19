@@ -217,6 +217,6 @@ For `handleDetailsClick` in the `App` component, just log to the console and set
 
 You have the `filter` state on `FilmListing`, but you still need to make it actually change the UI. You're not going to move the `filter` state because this filter only affects the `FilmListing`, not any other parts of the app.
 
-Add a conditional in `FilmListing` so that if the `filter` state is set to `faves`, the listing only shows films in the faves array. Otherwise, it shows all films.
+Add a conditional in `FilmListing` so that if the `filter` state is set to `filter`, the listing only shows films in the faves array. Otherwise, it shows all films.
 
 Try it out - you should be able to add films to your favorites and view just your favorites list by clicking that tab.
