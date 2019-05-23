@@ -3,6 +3,11 @@ import TMDB from './TMDB.js';
 import FilmListing from './FilmListing.js';
 import FilmDetails from './FilmDetails.js';
 
+import dotenv from 'dotenv';
+
+dotenv.config();
+console.log(TMDB.api_key)
+
 class App extends Component {
 
   constructor(props){
@@ -12,7 +17,15 @@ class App extends Component {
       faves: [],
       current: {}
     }
-    this.handleFaveToggle = this.handleFaveToggle.bind(this)
+    this.handleFaveToggle = this.handleFaveToggle.bind(this);
+    this.setCurrentFilm = this.setCurrentFilm.bind(this);
+  }
+
+  setCurrentFilm(film) {
+    // take in a film as an argument
+    console.log('setting current film', film)
+    // make an API request to get more data about that film
+    // set the result to current
   }
   
 
@@ -42,6 +55,7 @@ class App extends Component {
           films={this.state.films} 
           faves={this.state.faves} 
           handleFaveToggle={this.handleFaveToggle}
+          setCurrentFilm={this.setCurrentFilm}
           />
         <FilmDetails films={TMDB.films} current={this.state.current} />
       </div>

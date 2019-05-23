@@ -23,6 +23,7 @@ class FilmListing extends Component {
             film={film} 
             key={film.id}
             isFave={this.props.faves.includes(film)}
+            setCurrentFilm={this.props.setCurrentFilm}
             /> 
       ))
 

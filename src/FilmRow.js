@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import FilmPoster from './FilmPoster.js';
 import Fave from './Fave.js';
 
-class FilmDetails extends Component {
+class FilmRow extends Component {
 
   handleDetailsClick(film){
-    console.log(`fetching details for ${film.title}`)
+    this.props.setCurrentFilm(film)
+
   }
 
   render() {
@@ -30,4 +31,4 @@ class FilmDetails extends Component {
   }
 }
 
-export default FilmDetails
+export default FilmRow
