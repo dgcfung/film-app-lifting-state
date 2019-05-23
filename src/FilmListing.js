@@ -13,9 +13,11 @@ class FilmListing extends Component {
   }
 
   render() {
-      console.log('this.state.filter is: ', this.state.filter)
+      // the films we render depends on the state of the filter
+      const films = this.state.filter === "all" ?  this.props.films : this.props.faves
+      
       // calculate isFave (i.e., determine weather each film is in the faves array)
-      const allFilms = this.props.films.map( (film, index) => (
+      const allFilms = films.map( (film, index) => (
           <FilmRow 
             handleFaveToggle={this.props.handleFaveToggle} 
             film={film} 
@@ -40,7 +42,7 @@ class FilmListing extends Component {
                 onClick={() => this.handleFilterClick('filter')}
               >
                   FAVES
-                  <span className="section-count">0</span>
+                  <span className="section-count">{this.props.faves.length}</span>
               </div>
           </div>
 
