@@ -10,7 +10,7 @@ class FilmDetails extends Component {
         <br/><br/><br/>
 
         
-        <div>{current.overview}</div>
+    { current.id ?  <div>{current.overview}</div> : <div> <i>Click a movie to see the description!!!!!</i> </div> }
         
       </div>
     )
