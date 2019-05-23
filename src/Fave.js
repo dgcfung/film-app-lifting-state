@@ -12,7 +12,7 @@ class Fave extends Component {
 		// captures event and stops bubbling up
 		e.stopPropagation()
 		console.log('inside handle click')
-		this.props.handleFaveToggle()
+		this.props.handleFaveToggle(this.props.film)
 
 	}
 

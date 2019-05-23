@@ -17,7 +17,10 @@ class App extends Component {
   
 
   handleFaveToggle(film){
-
+    let newFavesArray  = [...this.state.faves]
+    // check if its already in faves
+    // if it is, remove it. if not , add it
+    // update the state of faves
   }
 
   render() {
