@@ -23,6 +23,7 @@ class FilmDetails extends Component {
         <Fave 
           handleFaveToggle={this.props.handleFaveToggle}
           film={this.props.film}
+          isFave={this.props.isFave}
         />
       </div>
     )

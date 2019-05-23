@@ -14,8 +14,14 @@ class FilmListing extends Component {
 
   render() {
       console.log('this.state.filter is: ', this.state.filter)
+      // calculate isFave (i.e., determine weather each film is in the faves array)
       const allFilms = this.props.films.map( (film, index) => (
-          <FilmRow handleFaveToggle={this.props.handleFaveToggle} film={film} key={film.id} /> 
+          <FilmRow 
+            handleFaveToggle={this.props.handleFaveToggle} 
+            film={film} 
+            key={film.id}
+            isFave={this.props.faves.includes(film)}
+            /> 
       ))
 
       return (
