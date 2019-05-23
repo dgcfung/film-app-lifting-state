@@ -47,7 +47,7 @@ class FilmListing extends Component {
               </div>
           </div>
 
-          {allFilms}
+          {allFilms.length > 0 ? allFilms : <div>No films to show</div>}
       </div>
       )
   }
