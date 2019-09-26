@@ -5,27 +5,20 @@ import Fave from './Fave.js';
 class FilmRow extends Component {
 
   handleDetailsClick(film){
-    this.props.setCurrentFilm(film)
+    console.log(`Fetching details for ${film}`)
 
   }
 
   render() {
     return (
-        <div 
-          className="film-row"
-          onClick={() => this.handleDetailsClick(this.props.film)}
-        >
+        <div onClick={() => this.handleDetailsClick(this.props.film)} className="film-row">
          <FilmPoster film={this.props.film} />
       
         <div className="film-summary">
           <h1>{this.props.film.title}</h1>
           <p>{new Date(this.props.film.release_date).getFullYear()}</p>
         </div>
-        <Fave 
-          handleFaveToggle={this.props.handleFaveToggle}
-          film={this.props.film}
-          isFave={this.props.isFave}
-        />
+        <Fave />
       </div>
     )
   }
