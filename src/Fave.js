@@ -16,7 +16,7 @@ class Fave extends Component {
 				className={`film-row-fave ${isFave}`}
 			    onClick={(e) => this.handleClick(e)}
 			>
-			  <p className="material-icons">add_to_queue</p>
+			  <p className="material-icons">{isFave}</p>
 			</div>
 		)
 	}

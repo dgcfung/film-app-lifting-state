@@ -13,7 +13,7 @@ class FilmRow extends Component {
           <h1>{this.props.film.title}</h1>
           <p>{new Date(this.props.film.release_date).getFullYear()}</p>
         </div>
-        <Fave onFaveToggle={this.props.onFaveToggle} />
+        <Fave isFave={this.props.isFave} onFaveToggle={this.props.onFaveToggle} />
       </div>
     )
   }

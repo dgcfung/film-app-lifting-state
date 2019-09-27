@@ -21,6 +21,8 @@ class FilmListing extends Component {
     const films = this.state.filter == "all" ? this.props.films : this.props.faves;
     const allFilms = films.map( (film, index) => (
         <FilmRow film={film} key={film.id} 
+                 isFave={this.state.filter == "faves" ? 
+                         true : this.props.faves.includes(film)}
                  onFaveToggle={() => this.props.onFaveToggle(film)}
                  handleDetailsClick={() => this.props.handleDetailsClick(film)} /> 
     ))

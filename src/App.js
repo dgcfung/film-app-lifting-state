@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import TMDB from './TMDB.js';
 import FilmListing from './FilmListing.js';
 import FilmDetails from './FilmDetails.js';
+import axios from 'axios';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+console.log(process.env);
 
 class App extends Component {
   constructor(props) {
@@ -13,8 +19,16 @@ class App extends Component {
   	}
   }
 
-  handleDetailsClick(film) {
-    console.log(`Fetching details for ${film.title}`);
+  handleDetailsClick = async (film) => {
+  	const url = `https://api.themoviedb.org/3/movie/${film.id}?api_key=${TMDB.api_key}&append_to_response=videos,images&language=en`;
+    try {
+	    const response = await axios.get(url);
+	    const current = response.data;
+	    console.log(current);
+	    this.setState({ current });
+	} catch(err) {
+		console.log(err);
+	}
   }
 
   handleFaveToggle = (film) => {
